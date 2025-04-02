@@ -1,4 +1,4 @@
-# Python Self-Learning – Week 5–7 Solutions
+# python self learning - exercise 1
 
 This repository contains my solutions for exercises from the Python course
 
