@@ -1,9 +1,9 @@
-def cup_of_join(*args, sep='-'):
+def cup_of_join(*args, sep=None):
     result = []
-    for i, group in enumerate(args):
-        if i > 0:
+    for i, lst in enumerate(args):
+        if i > 0 and sep is not None:
             result.append(sep)
-        result.extend(group)
-    if args:
+        result.extend(lst)
+    if sep is not None:
         result.append(sep)
     return result

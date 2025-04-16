@@ -58,3 +58,7 @@ if __name__ == '__main__':
     if os.path.exists(path):
         for message in extract_secret_messages(path):
             print(message)
+
+
+def parsle_tongue():
+    yield from ['python', 'isawesome', 'welldone', 'goodjob']
