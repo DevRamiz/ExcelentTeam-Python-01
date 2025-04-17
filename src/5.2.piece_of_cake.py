@@ -1,14 +1,9 @@
-def piece_of_cake(prices, optionals=None, **recipe):
-    if optionals is None:
-        optionals = []
+def piece_of_cake(*, prices, optionals, **kwargs):
     total = 0
-    for ingredient, amount in recipe.items():
-        if ingredient not in optionals:
-            total += (prices.get(ingredient, 0) * amount / 100)
+    for item, quantity in kwargs.items():
+        if item in optionals:
+            continue
+        if item not in prices:
+            continue
+        total += (quantity / 100) * prices[item]
     return total
-
-
-if __name__ == '__main__':
-    print(piece_of_cake({'chocolate': 18, 'milk': 8}, chocolate=200, milk=100))
-    print(piece_of_cake({'chocolate': 18, 'milk': 8}, optionals=['milk'], chocolate=300))
-    print(piece_of_cake({}))
