@@ -1,15 +1,12 @@
-def cup_of_join(*lists, sep='-'):
-    if not lists:
-        return None
+def cup_of_join(*args, sep=None):
     result = []
-    for i, lst in enumerate(lists):
+    for lst in args:
         result.extend(lst)
-        if i != len(lists) - 1:
+        if sep is not None:
             result.append(sep)
     return result
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(cup_of_join([1, 2], [8], [9, 5, 6], sep='@'))
     print(cup_of_join([1, 2], [8], [9, 5, 6]))
     print(cup_of_join([1]))
